@@ -26,44 +26,6 @@ void printMenu() {
     std::cout << std::endl;
 }
 
-// Starting point of application
-int main() {
-    startBinarySearchTree();
-
-    std::cout << "Goodbye." << std::endl;
-    return 0;
-}
-
-/* Determines which data structure is used for the application. */
-void chooseDataStructure() {
-    int choice = 0;
-    while (choice != 4) {
-        printStartMenu();
-        std::cin >> choice;
-
-        if (choice == 1) {
-            startBinarySearchTree();
-        }
-        else if (choice == 2) {
-            startBinarySearchTree();
-        }
-        else if (choice == 3) {
-            startBinarySearchTree();
-        }
-        else if (choice == 4) {
-            // Exit
-            break;
-        }
-        else {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Invalid option" << std::endl;
-        }
-
-        std::cout << std::endl;
-    }
-}
-
 /* Runs the application using binary search tree. */
 void startBinarySearchTree() {
     BinarySearchTree courseTree;
@@ -114,4 +76,42 @@ void startBinarySearchTree() {
 
         std::cout << std::endl;
     }
+}
+
+/* Determines which data structure is used for the application. */
+void chooseDataStructure() {
+    int choice = 0;
+    while (choice != 4) {
+        printStartMenu();
+        std::cin >> choice;
+
+        if (choice == 1) {
+            startBinarySearchTree();
+        }
+        else if (choice == 2) {
+            startBinarySearchTree();
+        }
+        else if (choice == 3) {
+            startBinarySearchTree();
+        }
+        else if (choice == 4) {
+            // Exit
+            break;
+        }
+        else {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid option" << std::endl;
+        }
+
+        std::cout << std::endl;
+    }
+}
+
+// Starting point of application
+int main() {
+    chooseDataStructure();
+
+    std::cout << "Goodbye." << std::endl;
+    return 0;
 }
