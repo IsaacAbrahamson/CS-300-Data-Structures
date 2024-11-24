@@ -1,8 +1,169 @@
-MATH201,Discrete Mathematics
-CSCI300,Introduction to Algorithms,CSCI200,MATH201
-CSCI350,Operating Systems,CSCI300
-CSCI101,Introduction to Programming in C++,CSCI100
+MATH100,Calculus I
+MATH101,Calculus II,MATH100
+MATH201,Discrete Mathematics,MATH100
+MATH202,Linear Algebra,MATH101
+MATH203,Differential Equations,MATH101
+MATH301,Multivariable Calculus,MATH101
+MATH302,Abstract Algebra,MATH202
+MATH303,Numerical Analysis,MATH203
+MATH304,Graph Theory,MATH201
+MATH401,Real Analysis,MATH301
+MATH402,Complex Analysis,MATH301
+MATH403,Number Theory,MATH201
+MATH404,Topology,MATH401
+MATH405,Mathematical Logic,MATH201
+MATH501,Algebraic Geometry,MATH302
+MATH502,Differential Geometry,MATH401
+STAT200,Introduction to Statistics,MATH100
+STAT300,Probability Theory,STAT200
+STAT301,Statistical Methods,STAT200
+STAT302,Experimental Design,STAT301
+STAT400,Statistical Learning,STAT300
+STAT401,Time Series Analysis,STAT300
+STAT402,Bayesian Statistics,STAT300
+STAT501,Advanced Statistical Theory,STAT400
 CSCI100,Introduction to Computer Science
-CSCI301,Advanced Programming in C++,CSCI101
-CSCI400,Large Software Development,CSCI301,CSCI350
-CSCI200,Data Structures,CSCI101
+CSCI101,Introduction to Programming in Python
+CSCI102,Introduction to Programming in Java,CSCI100
+CSCI103,Introduction to Programming in C++,CSCI100
+CSCI200,Data Structures and Algorithms I,CSCI102,MATH201
+CSCI201,Computer Organization,CSCI103
+CSCI202,Database Systems,CSCI200
+CSCI300,Algorithms and Complexity,CSCI200
+CSCI301,Software Engineering,CSCI200
+CSCI302,Computer Networks,CSCI201
+CSCI303,Programming Languages,CSCI200
+CSCI304,Artificial Intelligence,CSCI300,MATH202
+CSCI305,Computer Graphics,CSCI300,MATH202
+CSCI306,Cybersecurity Fundamentals,CSCI302
+CSCI307,Web Development,CSCI200
+CSCI308,Mobile App Development,CSCI301
+CSCI400,Operating Systems,CSCI201,CSCI300
+CSCI401,Distributed Systems,CSCI400
+CSCI402,Machine Learning,CSCI304
+CSCI403,Compiler Design,CSCI303
+CSCI404,Cloud Computing,CSCI401
+CSCI405,Computer Vision,CSCI402
+CSCI406,Natural Language Processing,CSCI402
+CSCI407,Parallel Computing,CSCI400
+CSCI408,Software Testing,CSCI301
+CSCI409,Game Development,CSCI305
+CSCI501,Advanced Algorithms,CSCI300
+CSCI502,Quantum Computing,CSCI304,MATH302
+PHYS101,Mechanics
+PHYS102,Electricity and Magnetism,PHYS101,MATH101
+PHYS201,Modern Physics,PHYS102
+PHYS202,Waves and Optics,PHYS102
+PHYS301,Classical Mechanics,PHYS201,MATH203
+PHYS302,Quantum Mechanics I,PHYS201,MATH203
+PHYS303,Thermodynamics,PHYS201
+PHYS304,Electrodynamics,PHYS102,MATH301
+PHYS401,Quantum Mechanics II,PHYS302
+PHYS402,Statistical Mechanics,PHYS303,MATH301
+PHYS403,Particle Physics,PHYS401
+PHYS404,Solid State Physics,PHYS302
+PHYS501,Quantum Field Theory,PHYS401,MATH402
+CHEM101,General Chemistry I
+CHEM102,General Chemistry II,CHEM101
+CHEM201,Organic Chemistry I,CHEM102
+CHEM202,Organic Chemistry II,CHEM201
+CHEM301,Physical Chemistry I,CHEM202,MATH203,PHYS102
+CHEM302,Physical Chemistry II,CHEM301
+CHEM303,Inorganic Chemistry,CHEM202
+CHEM304,Analytical Chemistry,CHEM202
+CHEM401,Biochemistry I,CHEM202
+CHEM402,Biochemistry II,CHEM401
+CHEM403,Spectroscopy,CHEM302
+CHEM404,Materials Chemistry,CHEM303
+CHEM501,Advanced Organic Synthesis,CHEM202
+BIOL101,Introduction to Biology
+BIOL102,Cell Biology,BIOL101
+BIOL201,Genetics,BIOL102
+BIOL202,Ecology,BIOL101
+BIOL301,Molecular Biology,BIOL201,CHEM201
+BIOL302,Evolution,BIOL201
+BIOL303,Physiology,BIOL102
+BIOL304,Microbiology,BIOL102
+BIOL401,Immunology,BIOL301
+BIOL402,Neurobiology,BIOL303
+BIOL403,Developmental Biology,BIOL301
+BIOL404,Genomics,BIOL201,CSCI101
+BIOL501,Advanced Cell Biology,BIOL301
+ENGR101,Engineering Graphics
+ENGR102,Introduction to Engineering
+ENGR201,Engineering Mechanics,PHYS101,MATH101
+ENGR202,Circuit Analysis,PHYS102
+ENGR301,Fluid Mechanics,ENGR201,MATH203
+ENGR302,Heat Transfer,ENGR301
+ENGR303,Control Systems,ENGR202,MATH203
+ENGR304,Materials Science,CHEM101,PHYS101
+ENGR401,Robotics,ENGR303,CSCI101
+ENGR402,Mechatronics,ENGR303
+ENGR501,Advanced Control Systems,ENGR303
+PSYC101,Introduction to Psychology
+PSYC201,Developmental Psychology,PSYC101
+PSYC202,Social Psychology,PSYC101
+PSYC301,Cognitive Psychology,PSYC101
+PSYC302,Abnormal Psychology,PSYC101
+PSYC303,Research Methods,PSYC101,STAT200
+PSYC304,Personality Theory,PSYC101
+PSYC401,Clinical Psychology,PSYC302
+PSYC402,Behavioral Neuroscience,PSYC301,BIOL303
+PSYC501,Advanced Research Methods,PSYC303
+ECON101,Microeconomics
+ECON102,Macroeconomics
+ECON201,Intermediate Microeconomics,ECON101,MATH101
+ECON202,Intermediate Macroeconomics,ECON102,MATH101
+ECON301,Econometrics,ECON201,STAT200
+ECON302,International Economics,ECON201
+ECON303,Development Economics,ECON202
+ECON304,Public Finance,ECON201
+ECON401,Game Theory,ECON201,MATH202
+ECON402,Industrial Organization,ECON201
+ECON501,Advanced Microeconomic Theory,ECON201,MATH301
+BUSN101,Introduction to Business
+BUSN201,Financial Accounting,MATH100
+BUSN202,Managerial Accounting,BUSN201
+BUSN301,Corporate Finance,BUSN201,STAT200
+BUSN302,Marketing Management,BUSN101
+BUSN303,Operations Management,STAT200
+BUSN304,Business Law
+BUSN401,Strategic Management,BUSN301,BUSN302
+BUSN402,International Business,ECON102
+BUSN501,Advanced Corporate Finance,BUSN301
+ARTS101,Drawing I
+ARTS102,Color Theory
+ARTS201,Painting I,ARTS101
+ARTS202,Digital Design,ARTS102
+ARTS301,Sculpture I
+ARTS302,Photography I
+ARTS401,Advanced Studio Art,ARTS201
+ARTS402,Digital Animation,ARTS202
+ARTS501,Master Studio,ARTS401
+MUSC101,Music Theory I
+MUSC102,Music Theory II,MUSC101
+MUSC201,Music History I
+MUSC202,Music History II,MUSC201
+MUSC301,Composition I,MUSC102
+MUSC302,Orchestration,MUSC102
+MUSC401,Advanced Composition,MUSC301
+MUSC402,Electronic Music,MUSC102
+MUSC501,Advanced Music Theory,MUSC102
+PHIL101,Introduction to Philosophy
+PHIL201,Ethics,PHIL101
+PHIL202,Logic,PHIL101
+PHIL301,Epistemology,PHIL101
+PHIL302,Metaphysics,PHIL101
+PHIL303,Philosophy of Science,PHIL101
+PHIL401,Political Philosophy,PHIL201
+PHIL402,Philosophy of Mind,PHIL301
+PHIL501,Advanced Logic,PHIL202,MATH201
+LANG101,Elementary Spanish I
+LANG102,Elementary Spanish II,LANG101
+LANG201,Intermediate Spanish I,LANG102
+LANG202,Intermediate Spanish II,LANG201
+LANG301,Advanced Spanish Grammar,LANG202
+LANG302,Spanish Literature,LANG202
+LANG401,Spanish Translation,LANG301
+LANG402,Business Spanish,LANG301
+LANG501,Advanced Spanish Literature,LANG302

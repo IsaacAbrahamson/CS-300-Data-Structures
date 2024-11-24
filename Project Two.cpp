@@ -2,6 +2,18 @@
 #include "BinarySearchTree.h"
 #include <filesystem>
 
+/* Prints the start menu information. */
+void printStartMenu() {
+    std::cout << "=== CHOOSE DATA STRUCTURE ===" << std::endl;
+    std::cout << "Please enter one of the following options:" << std::endl;
+    std::cout << "1: Vector" << std::endl;
+    std::cout << "2. Hashtable" << std::endl;
+    std::cout << "3. Binary Search Tree" << std::endl;
+    std::cout << "4. Exit" << std::endl;
+    std::cout << "=== ==== ===" << std::endl;
+    std::cout << std::endl;
+}
+
 /* Prints the menu information. */
 void printMenu() {
     std::cout << "=== MENU ===" << std::endl;
@@ -16,9 +28,46 @@ void printMenu() {
 
 // Starting point of application
 int main() {
+    startBinarySearchTree();
+
+    std::cout << "Goodbye." << std::endl;
+    return 0;
+}
+
+/* Determines which data structure is used for the application. */
+void chooseDataStructure() {
+    int choice = 0;
+    while (choice != 4) {
+        printStartMenu();
+        std::cin >> choice;
+
+        if (choice == 1) {
+            startBinarySearchTree();
+        }
+        else if (choice == 2) {
+            startBinarySearchTree();
+        }
+        else if (choice == 3) {
+            startBinarySearchTree();
+        }
+        else if (choice == 4) {
+            // Exit
+            break;
+        }
+        else {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Invalid option" << std::endl;
+        }
+
+        std::cout << std::endl;
+    }
+}
+
+/* Runs the application using binary search tree. */
+void startBinarySearchTree() {
     BinarySearchTree courseTree;
 
-    // TODO: Handle invalid input
     int choice = 0;
     while (choice != 4) {
         printMenu();
@@ -32,14 +81,17 @@ int main() {
 
             if (std::filesystem::exists(path)) {
                 courseTree.readFile(path);
-            } else {
+            }
+            else {
                 std::cout << "Invalid file" << std::endl;
             }
-        } else if (choice == 2) {
+        }
+        else if (choice == 2) {
             // Print all courses
             std::cout << std::endl;
             courseTree.InOrder();
-        } else if (choice == 3) {
+        }
+        else if (choice == 3) {
             // Print specific course
             std::cout << "Enter course number:" << std::endl;
             std::string number;
@@ -49,7 +101,8 @@ int main() {
             std::cout << std::endl;
             course.printCourse();
             course.printPrereqs();
-        } else if (choice == 4) {
+        }
+        else if (choice == 4) {
             // Exit
             break;
         }
@@ -61,7 +114,4 @@ int main() {
 
         std::cout << std::endl;
     }
-
-    std::cout << "Goodbye." << std::endl;
-    return 0;
 }
