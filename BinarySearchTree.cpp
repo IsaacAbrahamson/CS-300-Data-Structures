@@ -109,7 +109,7 @@ void BinarySearchTree::Remove(std::string courseNumber) {
 /**
  * Search for a course
  */
-Course BinarySearchTree::Search(std::string courseNumber) {
+Course BinarySearchTree::findCourse(std::string courseNumber) {
     Node* current = root;
 
     while (current != nullptr) {
@@ -201,4 +201,10 @@ void BinarySearchTree::readFile(std::string path) {
         Course course = Utils::readCourseLine(line);
         Insert(course);
     }
+}
+
+/* Prints out course tree. */
+void BinarySearchTree::printAll() {
+    std::cout << std::endl;
+    this->InOrder();
 }

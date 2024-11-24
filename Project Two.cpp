@@ -27,10 +27,8 @@ void printMenu() {
     std::cout << std::endl;
 }
 
-/* Runs the application using vector. */
-void startVector() {
-    std::vector<Course> courses;
-
+/* Runs the application using specified data structure. */
+void startApplication(CourseStructure* structure) {
     int choice = 0;
     while (choice != 4) {
         printMenu();
@@ -43,7 +41,7 @@ void startVector() {
             std::cin >> path;
 
             if (std::filesystem::exists(path)) {
-                courses = CourseVector::readFile(path);
+                structure->readFile(path);
             }
             else {
                 std::cout << "Invalid file" << std::endl;
@@ -51,9 +49,7 @@ void startVector() {
         }
         else if (choice == 2) {
             // Print all courses
-            for (Course course : courses) {
-                course.printCourse();
-            }
+            structure->printAll();
         }
         else if (choice == 3) {
             // Print specific course
@@ -61,60 +57,8 @@ void startVector() {
             std::string number;
             std::cin >> number;
 
-            Course course = CourseVector::findCourse(courses, number);
+            Course course = structure->findCourse(number);
 
-            std::cout << std::endl;
-            course.printCourse();
-            course.printPrereqs();
-        }
-        else if (choice == 4) {
-            // Exit
-            break;
-        }
-        else {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Invalid option" << std::endl;
-        }
-
-        std::cout << std::endl;
-    }
-}
-
-/* Runs the application using binary search tree. */
-void startBinarySearchTree() {
-    BinarySearchTree courseTree;
-
-    int choice = 0;
-    while (choice != 4) {
-        printMenu();
-        std::cin >> choice;
-
-        if (choice == 1) {
-            // Read file
-            std::cout << "Enter file name:" << std::endl;
-            std::string path;
-            std::cin >> path;
-
-            if (std::filesystem::exists(path)) {
-                courseTree.readFile(path);
-            }
-            else {
-                std::cout << "Invalid file" << std::endl;
-            }
-        }
-        else if (choice == 2) {
-            // Print all courses
-            std::cout << std::endl;
-            courseTree.InOrder();
-        }
-        else if (choice == 3) {
-            // Print specific course
-            std::cout << "Enter course number:" << std::endl;
-            std::string number;
-            std::cin >> number;
-
-            Course course = courseTree.Search(number);
             std::cout << std::endl;
             course.printCourse();
             course.printPrereqs();
@@ -145,21 +89,25 @@ void chooseDataStructure() {
             std::cout << "Chosen Data Structure: Vector" << std::endl;
             std::cout << "=============================" << std::endl;
             std::cout << std::endl;
-            startVector();
+            CourseVector structure;
+            startApplication(&structure);
         }
         else if (choice == 2) {
             std::cout << "================================" << std::endl;
             std::cout << "Chosen Data Structure: Hashtable" << std::endl;
             std::cout << "================================" << std::endl;
             std::cout << std::endl;
-            startBinarySearchTree();
+            // TODO: hashtable
+            break;
         }
         else if (choice == 3) {
             std::cout << "========================================" << std::endl;
             std::cout << "Chosen Data Structure: Binary Search Tree" << std::endl;
             std::cout << "========================================" << std::endl;
             std::cout << std::endl;
-            startBinarySearchTree();
+
+            BinarySearchTree structure;
+            startApplication(&structure);
         }
         else if (choice == 4) {
             // Exit

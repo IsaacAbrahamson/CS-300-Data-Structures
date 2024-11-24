@@ -2,9 +2,9 @@
 #include <iostream>
 #include "Utils.h"
 
-std::vector<Course> CourseVector::readFile(std::string path)
+void CourseVector::readFile(std::string path)
 {
-    std::vector<Course> courses;
+    std::vector<Course> newCourses;
 
     // Open file stream
     std::ifstream fileStream(path);
@@ -14,13 +14,19 @@ std::vector<Course> CourseVector::readFile(std::string path)
     std::string line;
     while (getline(fileStream, line)) {
         Course course = Utils::readCourseLine(line);
-        courses.push_back(course);
+        newCourses.push_back(course);
     }
 
-    return courses;
+    this->courses = newCourses;
 }
 
-Course CourseVector::findCourse(std::vector<Course> courses, std::string courseNumber)
+void CourseVector::printAll() {
+    for (Course course : courses) {
+        course.printCourse();
+    }
+}
+
+Course CourseVector::findCourse(std::string courseNumber)
 {
     // Assume courses vector is unsorted. If vector was sorted when read from file
     // then this could be a faster operation. Leaving unsorted because this is used

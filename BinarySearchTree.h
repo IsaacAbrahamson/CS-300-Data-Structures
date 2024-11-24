@@ -1,5 +1,6 @@
 #pragma once
 #include "Course.h"
+#include "CourseStructure.h"
 #include <fstream>
 struct Node {
     Course course;
@@ -19,7 +20,7 @@ struct Node {
 /**
  * The structure for a binary search tree that has nodes of courses.
  */
-class BinarySearchTree {
+class BinarySearchTree: public CourseStructure {
 private:
     Node* root;
 
@@ -32,11 +33,12 @@ private:
 public:
     BinarySearchTree();
     virtual ~BinarySearchTree();
-    void readFile(std::string path);
     void InOrder();
     void PostOrder();
     void PreOrder();
     void Insert(Course course);
     void Remove(std::string courseNumber);
-    Course Search(std::string courseNumber);
+    virtual void readFile(std::string path);
+    virtual void printAll();
+    virtual Course findCourse(std::string courseNumber);
 };
