@@ -30,7 +30,7 @@
     <ClCompile Include="Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CourseHashtable.cpp">
+    <ClCompile Include="CourseMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -52,7 +52,7 @@
     <ClInclude Include="Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CourseHashtable.h">
+    <ClInclude Include="CourseMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CourseStructure.h">

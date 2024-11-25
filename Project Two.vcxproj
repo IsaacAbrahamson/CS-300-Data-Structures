@@ -130,7 +130,7 @@
   <ItemGroup>
     <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="Course.cpp" />
-    <ClCompile Include="CourseHashtable.cpp" />
+    <ClCompile Include="CourseMap.cpp" />
     <ClCompile Include="CourseVector.cpp" />
     <ClCompile Include="Project Two.cpp" />
     <ClCompile Include="Utils.cpp" />
@@ -142,7 +142,7 @@
     <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="CourseStructure.h" />
     <ClInclude Include="Course.h" />
-    <ClInclude Include="CourseHashtable.h" />
+    <ClInclude Include="CourseMap.h" />
     <ClInclude Include="CourseVector.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>

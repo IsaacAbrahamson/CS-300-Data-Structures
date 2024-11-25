@@ -4,8 +4,6 @@
 
 void CourseVector::readFile(std::string path)
 {
-    std::vector<Course> newCourses;
-
     // Open file stream
     std::ifstream fileStream(path);
     if (!fileStream) std::cerr << "Could not open file!";
@@ -14,10 +12,8 @@ void CourseVector::readFile(std::string path)
     std::string line;
     while (getline(fileStream, line)) {
         Course course = Utils::readCourseLine(line);
-        newCourses.push_back(course);
+        courses.push_back(course);
     }
-
-    this->courses = newCourses;
 }
 
 void CourseVector::printAll() {

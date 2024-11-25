@@ -2,6 +2,7 @@
 #include "BinarySearchTree.h"
 #include <filesystem>
 #include "CourseVector.h"
+#include "CourseMap.h"
 
 /* Prints the start menu information. */
 void printStartMenu() {
@@ -112,7 +113,8 @@ void chooseDataStructure() {
             std::cout << "Chosen Data Structure: Hashtable" << std::endl;
             std::cout << "================================" << std::endl;
             std::cout << std::endl;
-            // TODO: hashtable
+            CourseMap structure;
+            startApplication(&structure);
             break;
         }
         else if (choice == 3) {
