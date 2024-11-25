@@ -27,6 +27,12 @@ void printMenu() {
     std::cout << std::endl;
 }
 
+/* Prints the menu information. */
+void printTime(std::chrono::system_clock::time_point before, std::chrono::system_clock::time_point after) {
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(after - before);
+    std::cout << "Time spent: " << duration.count() << " milliseconds" << std::endl;
+}
+
 /* Runs the application using specified data structure. */
 void startApplication(CourseStructure* structure) {
     int choice = 0;
@@ -41,7 +47,10 @@ void startApplication(CourseStructure* structure) {
             std::cin >> path;
 
             if (std::filesystem::exists(path)) {
+                auto before = std::chrono::system_clock::now();
                 structure->readFile(path);
+                auto after = std::chrono::system_clock::now();
+                printTime(before, after);
             }
             else {
                 std::cout << "Invalid file" << std::endl;
@@ -49,7 +58,10 @@ void startApplication(CourseStructure* structure) {
         }
         else if (choice == 2) {
             // Print all courses
+            auto before = std::chrono::system_clock::now();
             structure->printAll();
+            auto after = std::chrono::system_clock::now();
+            printTime(before, after);
         }
         else if (choice == 3) {
             // Print specific course
@@ -57,7 +69,10 @@ void startApplication(CourseStructure* structure) {
             std::string number;
             std::cin >> number;
 
+            auto before = std::chrono::system_clock::now();
             Course course = structure->findCourse(number);
+            auto after = std::chrono::system_clock::now();
+            printTime(before, after);
 
             std::cout << std::endl;
             course.printCourse();
